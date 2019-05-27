@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Manage
 {
@@ -19,5 +20,8 @@ namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Manage
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [BindNever]
+        public string StatusMessage { get; set; }
     }
 }

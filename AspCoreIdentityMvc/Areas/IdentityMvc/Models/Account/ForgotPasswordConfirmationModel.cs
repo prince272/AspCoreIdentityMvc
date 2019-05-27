@@ -1,6 +1,6 @@
 ﻿namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Account
 {
-    public class ForgotPasswordConfirmation
+    public class ForgotPasswordConfirmationModel
     {
     }
 }

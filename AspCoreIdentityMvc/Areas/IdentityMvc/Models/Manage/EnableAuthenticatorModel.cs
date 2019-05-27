@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Manage
 {
@@ -9,5 +10,8 @@ namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Manage
         [DataType(DataType.Text)]
         [Display(Name = "Verification Code")]
         public string Code { get; set; }
+
+        [BindNever]
+        public string StatusMessage { get; set; }
     }
 }

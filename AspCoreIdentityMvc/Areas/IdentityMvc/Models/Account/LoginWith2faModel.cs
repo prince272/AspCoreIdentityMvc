@@ -12,5 +12,7 @@ namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Account
 
         [Display(Name = "Remember this machine")]
         public bool RememberMachine { get; set; }
+
+        public bool RememberMe { get; set; }
     }
 }

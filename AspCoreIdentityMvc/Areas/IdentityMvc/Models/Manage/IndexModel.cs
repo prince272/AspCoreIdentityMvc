@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Manage
 {
@@ -11,5 +12,11 @@ namespace AspCoreIdentityMvc.Areas.IdentityMvc.Models.Manage
         [Phone]
         [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
+
+        [BindNever]
+        public string StatusMessage { get; set; }
+
+        [BindNever]
+        public string Username { get; set; }
     }
 }

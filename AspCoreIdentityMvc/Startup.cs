@@ -43,6 +43,14 @@ namespace AspCoreIdentityMvc
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/IdentityMvc/Account/Login";
+                options.LogoutPath = $"/IdentityMvc/Account/Logout";
+                options.AccessDeniedPath = $"/IdentityMvc/Account/AccessDenied";
+                options.ReturnUrlParameter = "ReturnUrl";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
